@@ -119,3 +119,91 @@ ck the versions of the already installed modules against the available modules a
 11.terraform destroy — Destroy the infrastructure managed by Terraform.
 
 12.terraform refresh — Modify the state file with updated metadata containing information on the resources being managed in Terraform. Will not modify your infrastructure
+
+## Q) What are Terraform Provisioners?
+
+You can use provisioners to model specific actions on the local machine or on a remote machine in order to prepare servers or other infrastructure objects for service
+
+## Q) what is state file and manifest file in terraform ?
+
+
+
+
+
+
+Basic Syntax of Terraform :
+
+
+resource "aws_vpc" "main" {
+  cidr_block = var.base_cidr_block
+}
+
+<BLOCK TYPE> "<BLOCK LABEL>" "<BLOCK LABEL>" {
+  # Block body
+  <IDENTIFIER> = <EXPRESSION> # Argument
+}
+
+
+Blocks are containers for other content and usually represent the configuration of some kind of object, like a resource.
+
+Blocks have a block type, can have zero or more labels, and have a body that contains any number of arguments and nested blocks.
+
+Most of Terraform's features are controlled by top-level blocks in a configuration file.
+
+Arguments assign a value to a name. They appear within blocks.
+
+Expressions represent a value, either literally or by referencing and combining other values. They appear as values for arguments, or within other expressions.
+
+The Terraform language is declarative, describing an intended goal rather than the steps to reach that goal.
+
+The ordering of blocks and the files they are organized into are generally not significant; Terraform only considers implicit and explicit relationships between resources when determining an order of operations
+
+## Q) Terraform Interview Questions :
+
+1. Define IAC?
+
+IAC or Infrastructure as Code allows you to build, change, and manage your infrastructure through coding instead of manual processes.
+
+ The configuration files are created according to your infrastructure specifications and these configurations can be edited and distributed securely within an organization.
+
+2. What are the key features of Terraform?
+
+Terraform helps you manage all of your infrastructures as code and construct it as and when needed. Here are its key main features:
+
+A console that allows users to observe functions 
+The ability to translate HCL code into JSON format
+A configuration language that supports interpolation 
+A module count that keeps track of the number of modules applied to the infrastructure.
+
+
+3. What are the most useful Terraform commands?
+
+Some of the most useful Terraform commands are:
+
+terraform init - initializes the current directory
+terraform refresh - refreshes the state file
+terraform output - views Terraform outputs
+terraform apply - applies the Terraform code and builds stuff
+terraform destroy - destroys what has been built by Terraform
+terraform graph - creates a DOT-formatted graph
+terraform plan - a dry run to see what Terraform will do
+
+4. What is a Private Module Registry?
+
+A Private Module Registry is a feature from Terraform Cloud that allows you to share Terraform modules across the organization.
+
+ You can enforce rules or “sentinel policies” on the registry that specify how members of your organization can use the modules.
+
+ 5 What are the components of Terraform architecture?
+
+The Terraform architecture includes the following features:
+
+Sub-graphs
+Expression Evaluation
+Vertex Evaluation
+Graph Walk
+Graph Builder
+State Manager
+Configuration Loader
+CLI (Command Line interface)
+Backend
