@@ -21,15 +21,32 @@ It accomplishes this by using the two main components of  Terraform architecture
 
 #### Terraform core uses two input sources:
 
+#### 1st one is Core :
+
 The first is the source input that the user configures into Terraform, defining what resources need to be created or provisioned. 
 
 The second input source consists of data feeds into Terraform about what the current infrastructure setup looks like.
 
+#### 2nd One is Provider :
+
+The second key component that makes Terraform go are providers for specific technologies.
+
+This is typically cloud providers like AWS or Azure but can be any other infrastructure or platform as a service tool. 
+
+Kubernetes, for instance, would also be considered a provider that Terraform utilizes.
+
+Terraform has more than one hundred providers for various technologies, granting users access to its resources.
+
+If you’re using AWS, for instance, Terraform will also have access to EC2 instances and other resources within the tech stack.
+
+You can then create infrastructure on different levels, stacking Kubernetes on top of Azure, for example.
+
+This is how Terraform works, using both Core and Provider functionality to complete your application and infrastructure setup quickly and using only code
 
 
 
 
-## Steps tp follow in terraform framework:
+## Steps to follow in terraform framework:
 
 Following are the general steps that are involved in the lifecycle of a resource creation:
 
