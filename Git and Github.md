@@ -70,4 +70,5 @@ GitHub Actions is a continuous integration and continuous delivery (CI/CD) platf
 
 You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.
 
-##
+## Github commands 
+https://github.com/joshnh/Git-Commands
