@@ -1,4 +1,4 @@
-## Jnekins
+## Jenkins
 Jenkins® is an open source automation server. With Jenkins, organizations can accelerate the software development process by automating it.
 
 Jenkins manages and controls software delivery processes throughout the entire lifecycle, including build, document, test, package, stage, deployment, static code analysis and much more.
