@@ -412,4 +412,14 @@ Public Key: ~/.ssh/id_rsa.pub
 
 ## code explanation in the yaml files 
  
- 
+ ## explain a a kubernetes cluster in lay man terms
+ ey Components
+Nodes (Ships): These are the individual machines (either physical or virtual) that do the actual work. Each node can run multiple applications (containers).
+Pods (Containers on Ships): These are the smallest units in Kubernetes. A pod can hold one or more containers, which are like the cargo on a ship. 
+They contain the application and everything it needs to run.
+Control Plane (Command Center): This is the brain of the operation. It coordinates all the ships, making sure they know what to do, where to go, and how to handle any issues that come up.
+
+## blue - green deployment 
+
+Blue-Green Deployment is a release management strategy that reduces downtime and risk by running two identical production environments, referred to as Blue and Green. At any time, only one environment (e.g., Blue) serves production traffic. When a new version of the software is ready, it is deployed to the idle environment (Green). After thorough testing, traffic is switched to the Green environment, making it live. This strategy allows for seamless rollbacks if issues arise, as the previous environment (Blue) remains unchanged and can be switched back instantly.
+
