@@ -1,0 +1,72 @@
+---
+- name: configure apache with handler
+  hosts: all
+  tasks:
+    - name: installed httpd
+      dnf:
+        name: httpd
+        state: latest
+
+    - name: copied httpd.conf file on target machine
+      copy:
+        src: httpd.conf
+        dest: /etc/httpd/conf/httpd.conf
+
+    - name: copied index.html
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+
+    - name: restart the httpd service
+      systemd:
+        name: httpd
+        state: restarted
+        enabled: true
+      notify: restart_httpd
+
+    - name: installed firewalld
+      yum:
+        name: firewalld
+        state: latest
+
+
+### docker file 
+FROM tomcat:latest (specifies the base image of your docker container) 
+RUN cp -R  to run files from unix or host machine 
+COPY to run files form docker container 
+
+###
+yaml files 
+apiVersion :v1
+kind: Service 
+metadata:
+  name:app-service (name of the service)
+  labels: (key value pairs)
+    app: regapp (identify service)
+spec:
+  selector:  (defines how service will find the pods )
+  app:reg-app
+  ports:
+  port: 80 (it will listen )
+  targetport: 8080    (its:  will expose the traffic to 8080)
+  type: loadbalancer
+
+### 
+deployment.yml
+
+apiVersion: v1
+kind: Deployment 
+metadata:
+  name: glenndeployment 
+  labels: 
+  app: nginx
+spec: (defines desired state of the deployment file )
+  replicas: 3
+  selector: defines how to identify the pod 
+  matchlabels: labels the selector that will match
+  app: nginx (selecr will macth the pods with the labels ) 
+
+Template: (describes the pods that will be created by the deployment)
+metadata: (metadata of pods)
+labels: 
+app: nginx
